@@ -1,0 +1,63 @@
+*{
+	margin: 0;
+}
+body,html{
+	margin: 0;
+}
+.body{
+	background: url(../image/bg.jpg);
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+.cover{
+	background-color: rgba(0, 0, 0, .9);
+	height: 100vh;
+	text-align: center;
+}
+.container{
+	padding-top: 25%;
+	margin: 0 auto;
+	font-size: 2em;
+	color:  rgba(3, 111, 221, .5);
+}
+button{
+	background : linear-gradient(to right, rgb(158, 152, 76), rgb(3, 111, 221));
+	border-radius: 8px;
+	padding: 18px;
+	border: 1px solid white;
+	box-shadow: 2px 2px 2px 2px #eee;
+	margin: 10px;
+}
+button:hover{
+	cursor: pointer;
+	transform: scale(1.2);
+}
+#howto{
+	height: 100vh;
+	background : linear-gradient(to right, rgba(218, 114, 65, 0.5), rgba(109, 215, 174, 0.5));
+	font-size: 1.5rem;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+h1{
+	text-align: center;
+}
+hr{
+	margin: 0 auto;
+	width: 400px;
+	color: grey;
+}
+.instructions{
+	padding: 15px;
+}
+@media screen and (max-width:580px){
+	.container{
+		font-size: 1.5em;
+	}
+}
+@media screen and (max-width:440px){
+	.container{
+		font-size: 1.2em;
+	}
+}

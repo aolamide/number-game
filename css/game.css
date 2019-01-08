@@ -1,0 +1,45 @@
+body,html{
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	background: linear-gradient(to right, rgb(158, 152, 76), rgb(3, 111, 221));
+}
+#validation{
+	color: red;
+	margin-top: 5px;
+}
+main{
+	width: 100%;
+	height: 80%;
+	margin: 5% auto;
+	display: flex;
+}
+#side1{
+	padding: 15px;
+	width: 50%;
+	height: 70%;
+}
+input,button{
+	border-radius: 7px;
+	padding: 15px;
+	margin: 5px 0 15px 0;
+}
+button:hover{
+	cursor: pointer;
+	transform: scale(1.1);
+}
+#side2{
+	padding: 15px;
+	width: 50%;
+}
+.red{
+	color:red;
+}
+.green{
+	color: green;
+}
+table, td {
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+}
