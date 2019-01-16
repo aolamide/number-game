@@ -5,9 +5,12 @@ const validation = document.getElementById("validation");
 const gameStatus = document.querySelector(".status");
 const guessButton = document.getElementById("submit");
 const guessesLeft = document.querySelector(".guessleft");
+const playAgain = document.getElementById("openModal");
 const playAgainButton = document.getElementById("playAgain");
 const resultsTable = document.querySelector("table");
 const winningNumberDisplay = document.getElementById("winningNumber");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementsByClassName("closeModal")[0];
 let guess = 7;
 //Generate a random four digits number i.e the winning number
 const generateWinningNumber = () => {
@@ -26,7 +29,6 @@ const generateWinningNumber = () => {
 	return winningNumber;
 }
 let generatedWinningNumber = generateWinningNumber();
-
 //Tasks to perform when user submits a guess
 const game = (e) => {
 	e.preventDefault();
@@ -52,7 +54,7 @@ const game = (e) => {
 			gameStatus.innerText = "YOU WIN!!!";
 			guessButton.setAttribute("disabled","disabled");
 			userInput.setAttribute("disabled","disabled");
-			playAgainButton.style.display = "block";
+			playAgain.style.display = "block";
 		}else{
 			appenduserInput(D, W);
 			guess--;
@@ -63,7 +65,7 @@ const game = (e) => {
 				winningNumberDisplay.innerText = `Number is : ${generatedWinningNumber}`;
 				guessButton.setAttribute("disabled","disabled");
 				userInput.setAttribute("disabled","disabled");
-				playAgainButton.style.display = "block";
+				playAgain.style.display = "block";
 			}
 		}
 	}
@@ -84,11 +86,17 @@ const validateInput = () => {
 	}
 	return passes;
 }
+playAgain.addEventListener("click", () => {
+	modal.style.display = "block";
+})
+closeModal.addEventListener("click", () => {
+	modal.style.display = "none";
+})
 playAgainButton.addEventListener("click", () => {
-	if(confirm("You want to play again?")){
-		return replay();
-	}
+	modal.style.display = "none";
+	return replay();
 });
+
 //Appending user input to guesses table
 const appenduserInput = (D,W) => {
 	let tr = document.createElement("tr");
@@ -101,9 +109,10 @@ const appenduserInput = (D,W) => {
 	tr.classList.add("new");
 	resultsTable.appendChild(tr);
 }
+
 //What to do if user chooses to play again after one game ends
 const replay = () => {
-	playAgainButton.style.display ="none";
+	playAgain.style.display ="none";
 	guessButton.removeAttribute("disabled");
 	const existingData = document.querySelectorAll(".new");
 	const existingTable = document.querySelector("table");
@@ -118,3 +127,9 @@ const replay = () => {
 	guess = 7;
 	guessesLeft.innerText = guess;
 }
+
+//
+console.error("HEY DEVELOPER, HOPE YOU'VE NOT COME HERE TO CHECK THE WINNING NUMBER.\nGET BACK TO THE GAME HAHA");
+console.warn("HEY DEVELOPER, HOPE YOU'VE NOT COME HERE TO CHECK THE WINNING NUMBER.\nGET BACK TO THE GAME HAHA");
+console.error("HEY DEVELOPER, HOPE YOU'VE NOT COME HERE TO CHECK THE WINNING NUMBER.\nGET BACK TO THE GAME HAHA");
+//

@@ -15,7 +15,7 @@
 			<h5 id="validation"></h5>
 			<h1 class="status"></h1>
 			<h3 id="winningNumber"></h3>
-			<button id="playAgain" style="display: none;">Play Again</button>
+			<button id="openModal" style="display: none;">Play Again</button>
 		</div>
 		<div id="side2">
 			<h3>Guesses left: <span class="guessleft">7</span></h3>
@@ -23,8 +23,27 @@
 				<th>Previous Guesses</th>
 			</table>
 		</div>
-		
 	</main>
+	<!-- popup -->
+	<div id="modal" class="modal">
+		<div id="modalContent" class="modalContent">
+			<div class="modalHeader">
+				<span class="closeModal">X</span>
+				<h1>Yayy</h1>
+			</div>
+			<div class="modalBody">
+				<p>
+					Glad you enjoyed the game and want to play again.<br>
+					Give this project a star on <a target="_blank" href="https://github.com/aolamide/number-game">GitHub</a>
+				</p>
+				<button id="playAgain">Play</button>
+			</div>
+			<div class="modalFooter">
+				<h3>Good Luck!</h3>
+			</div>
+		</div>
+	</div>
+	<!-- popup -->
 	<script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>
