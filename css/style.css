@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+}
+body,html{
+	margin: 0;
+}
+.body{
+	background: url(../img/bg.jpg);
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+.cover{
+	background-color: rgba(0, 0, 0, .9);
+	height: 100vh;
+	text-align: center;
+}
+.container{
+	padding-top: 20%;
+	margin: 0 auto;
+	font-size: 2em;
+	color:  rgba(3, 111, 221, .5);
+}
+
+button{
+	background : linear-gradient(to right, #614385, #516395);
+	border-radius: 8px;
+	padding: 18px;
+	border: 1px solid white;
+	box-shadow: 2px 2px 2px 2px #eee;
+	margin: 10px;
+    color: white;
+}
+button:hover{
+	cursor: pointer;
+	transform: scale(1.2);
+    background : linear-gradient(to left, #614385, #516395);
+}
+#howto{
+	height: 107vh;
+/*	background: linear-gradient(to left, #4568dc , #b06ab3);*/
+    background: linear-gradient(to right, #cc2b5e , #753a88);
+/*    color: #585858;*/
+    color: #c3c3c3;
+	font-size: 1.5rem;
+	margin: 0 auto;
+	padding-top: 30px; 
+}
+h1{
+	text-align: center;
+}
+hr{
+	margin: 0 auto;
+	width: 400px;
+	color: grey;
+}
+p{
+    padding-top: 15px;
+}
+#example{
+    padding-top: 6px;
+    display: block;
+    
+}
+#exapmle #example-list li{
+    list-style-type: none;
+}
+.instructions{
+	padding: 18px;
+}
+#ps{
+    padding-top: 5px;
+}
+.instructions .play{
+	text-align: center;
+}
+/*Container panel*/
+@media screen and (max-width:1365px){
+	.container{
+        font-size: 1.5em;
+        padding-top: 40vh;
+	}
+}
+@media screen and (max-width:580px){
+	.container{
+        padding-top: 40vh;
+		font-size: 1.35em;
+        margin: 0px 15px;
+	}
+}
+@media screen and (max-width:440px){
+	.container{
+        padding-top: 65%;
+		font-size: 1.2em;
+        margin: auto;
+	}
+}
+/*Instructiion panel */
+@media screen and (max-width:1360px){
+	.instructions{
+		height: auto;
+        background: linear-gradient(to right, #cc2b5e , #753a88);
+        color: #c3c3c3;
+	}
+}
+@media screen and (max-width:580px){
+	.instructions{
+		width: auto;
+        background: linear-gradient(to right, #cc2b5e , #753a88);
+        color: #c3c3c3;
+	}
+}

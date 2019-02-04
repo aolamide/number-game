@@ -1,7 +1,7 @@
 //Declare variables
 const userInput = document.querySelector("input");
 const form = document.querySelector("form");
-const validation = document.getElementById("validation");
+const validation = document.getElementById("validation"); 
 const gameStatus = document.querySelector(".status");
 const guessButton = document.getElementById("submit");
 const guessesLeft = document.querySelector(".guessleft");
@@ -22,7 +22,8 @@ const generateWinningNumber = () => {
 		winningNumber += numbers[index];
 		numbers.splice(index, 1);
 		ini--;
-	}//If generated number starts with 0, replace the 0 with another number not already picked
+	}
+//If generated number starts with 0, replace the 0 with another number not already picked
 	if (winningNumber.startsWith("0")){
 		winningNumber = winningNumber.replace("0", numbers[Math.floor(Math.random() * 6)]);
 	}
@@ -76,7 +77,7 @@ form.addEventListener("submit", game);
 const validateInput = () => {
 	let passes;
 	for (let i of userInput.value) {
-		if (((userInput.value.split(i).length) !== 2) || userInput.value.length != 4){
+		if (((userInput.value.split(i).length) !== 2) ||          userInput.value.length != 4){
 			passes = false;
 			break;	
 		}
