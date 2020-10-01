@@ -1,112 +1,89 @@
-*{
-	margin: 0;
+* {
+  margin: 0;
 }
-body,html{
-	margin: 0;
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+  background: url(../img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  overflow-x: hidden;
 }
-.body{
-	background: url(../img/bg.jpg);
-	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
+.container {
+	min-height: 107vh;
+	background-color: rgba(0, 0, 0, 0.9);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  font-size: 1.8em;
+  color: #606e85;
 }
-.cover{
-	background-color: rgba(0, 0, 0, .9);
-	height: 100vh;
-	text-align: center;
+.container *{
+	margin: 0.5rem;
 }
-.container{
-	padding-top: 20%;
-	margin: 0 auto;
-	font-size: 2em;
-	color:  rgba(3, 111, 221, .5);
+.h2{
+  text-align: center;
+  margin: 1.5rem 0;
+  border-bottom: 1px solid white;
 }
 
-button{
-	background : linear-gradient(to right, #614385, #516395);
-	border-radius: 8px;
-	padding: 18px;
-	border: 1px solid white;
-	box-shadow: 2px 2px 2px 2px #eee;
-	margin: 10px;
-    color: white;
+button {
+  background: hsl(229, 64%, 46%);
+  border-radius: 10px;
+  padding: 18px;
+  border: none;
+  box-shadow: 2px 2px 2px #eee;
+  margin: 10px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
 }
 button:hover{
-	cursor: pointer;
-	transform: scale(1.2);
-    background : linear-gradient(to left, #614385, #516395);
+  color: #dc2e4e;
 }
-#howto{
-	height: 107vh;
-/*	background: linear-gradient(to left, #4568dc , #b06ab3);*/
-    background: linear-gradient(to right, #cc2b5e , #753a88);
-/*    color: #585858;*/
-    color: #c3c3c3;
-	font-size: 1.5rem;
-	margin: 0 auto;
-	padding-top: 30px; 
+button:active{
+	animation: button .8s ease;
 }
-h1{
-	text-align: center;
+@keyframes button{
+	to{ transform: scale(0.85);}
 }
-hr{
-	margin: 0 auto;
-	width: 400px;
-	color: grey;
+#rules {
+  min-height: 100vh;
+  background: linear-gradient(to left, hsl(214, 47%, 23%), hsl(237, 49%, 15%));;
+  color: #fffdfd;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1rem .5rem;
+  line-height: 1.5;
 }
-p{
-    padding-top: 15px;
+h1 {
+  text-align: center;
 }
-#example{
-    padding-top: 6px;
-    display: block;
-    
+hr {
+  margin: 0 auto;
+  width: 400px;
 }
-#exapmle #example-list li{
-    list-style-type: none;
+p {
+  padding-top: 15px;
 }
-.instructions{
-	padding: 18px;
+#example {
+  padding-top: 6px;
+  display: block;
 }
-#ps{
-    padding-top: 5px;
+#exapmle #example-list li {
+  list-style-type: none;
 }
-.instructions .play{
-	text-align: center;
+.instructions {
+  padding: 18px;
 }
-/*Container panel*/
-@media screen and (max-width:1365px){
-	.container{
-        font-size: 1.5em;
-        padding-top: 40vh;
-	}
+#ps {
+  padding-top: 5px;
 }
-@media screen and (max-width:580px){
-	.container{
-        padding-top: 40vh;
-		font-size: 1.35em;
-        margin: 0px 15px;
-	}
-}
-@media screen and (max-width:440px){
-	.container{
-        padding-top: 65%;
-		font-size: 1.2em;
-        margin: auto;
-	}
-}
-/*Instructiion panel */
-@media screen and (max-width:1360px){
-	.instructions{
-		height: auto;
-        background: linear-gradient(to right, #cc2b5e , #753a88);
-        color: #c3c3c3;
-	}
-}
-@media screen and (max-width:580px){
-	.instructions{
-		width: auto;
-        background: linear-gradient(to right, #cc2b5e , #753a88);
-        color: #c3c3c3;
-	}
+.instructions .play {
+  text-align: center;
 }

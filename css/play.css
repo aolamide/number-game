@@ -1,196 +1,145 @@
-body,html{
-	margin: 0;
-	background : linear-gradient(to left, #614385, #516395);
-    /* added keyframes to background to make it more heated ;)*/
-    animation: body;
-    animation-duration: 8s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    
+body{
+  margin: 0;
+  overflow-x: hidden;
+  background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));;
 }
-:root{
-    --button-border-t1: rgba( 222, 184, 135, 0.53 );
-    --button-border-t2: rgba(0, 255, 255, 0.67);
+h1 {
+  color: white;
 }
-h1{
-    color: white;
-    text-shadow: 1px 0px 1px #eee;
+#side2 {
+  color: white;
+  width: 40%;
 }
-#side2{
-    color: white;
-    padding: 15px;
-	width: 50vw;
-    
+#validation {
+  color: red;
+  margin-top: 5px;
 }
-#validation{
-	color: red;
-	margin-top: 5px;
+main {
+  width: 90%;
+  height: 80%;
+  margin: 5% auto;
+  display: flex;
+  justify-content: space-between;
 }
-main{
-	width: 100%;
-	height: 80%;
-	margin: 5% auto;
-	display: flex;
+
+input{
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px 0 15px 0;
 }
-#side1{
-	padding: 15px;
-	width: 50vw;
-}
-input,button{
-	border-radius: 7px;
-    padding: 15px;
-	margin: 5px 0 15px 0;
-}
-button{
-    border-top-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-    border-right-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-    border-bottom-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-    border-left-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-    color: white;
-    background : linear-gradient(to left, #614385, #516395);
-    animation: button;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
+button {
+  background: hsl(229, 64%, 46%);
+  border-radius: 10px;
+  padding: 18px;
+  border: none;
+  box-shadow: 2px 2px 2px #eee;
+  margin: 10px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
 }
 button:hover{
-	cursor: pointer;
-    background : linear-gradient(to right, #614385, #516395);
-    transition-duration: .5s;
-/*    transform: scale(1.1);*/
-	transform: rotateY(360deg);
+  color: #dc2e4e;
 }
-.red{
-	color:red;
+button:active{
+	animation: button .5s ease;
 }
-.green{
-	color: green;
+@keyframes button{
+	to{ transform: scale(0.8);}
 }
-table, td {
+table,
+td {
   border-bottom: 1px solid black;
   border-collapse: collapse;
   padding: 8px;
 }
 /*PopUp*/
-.openBtn{
-	background: coral;
-	padding:15px 20px;
-	border: 0;
-	outline: none;
+.openBtn {
+  background: coral;
+  padding: 15px 20px;
+  border: 0;
+  outline: none;
 }
-.openBtn:hover{
-	background: #333;
-	cursor: pointer;
+.openBtn:hover {
+  background: #333;
+  cursor: pointer;
 }
-.modal{
-	display: none;
-	position: fixed;
-	background: #11111185;
-	top: 0;
-	left:0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	z-index : 1;
+.modal {
+  display: none;
+  position: fixed;
+  background: #11111185;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
 }
-.modalContent{
-	width: 60%;
-	background: white;
-	margin: auto;
-	margin-top: 100px;
-	margin-right: auto;
-	box-shadow: 3px 4px 6px #777, -3px -4px 6px #777;
+.modalContent {
+  border-radius: 10px;
+  width: 40vw;
+  background: white;
+  margin: auto;
+  margin-top: 30vh;
+  animation: alert 0.4s ease-out reverse;
 }
-.modalHeader{
-	background: rgb(158, 152, 76);
-	padding: 15px;
+@keyframes alert {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.35);
+    opacity: 0;
+  }
 }
-.modalHeader h1, .modalFooter h3{
-	margin: 0;
+.modalHeader {
+  border-radius: 10px 10px 0 0;
+  background: #606e85;
+  padding: 15px;
 }
-.closeModal{
-	float: right;
-	font-weight: 900;
-	font-size: 20px;
-	color: #11111185;
+.modalHeader h1,
+.modalFooter h3 {
+  margin: 0;
 }
-.guessleft{
-    color: cyan;
+.closeModal {
+  float: right;
+  font-weight: 900;
+  font-size: 20px;
+  color: #11111185;
+  cursor: pointer;
+  transition: .5s;
 }
-.dying{
-    color: red;
-    
+.guessleft {
+  color: cyan;
 }
-.closeModal:hover{
-	cursor:pointer;
-	color: black;
+.dying {
+  color: red;
 }
-.modalBody{
-	padding: 15px;
+.closeModal:hover {
+  color: rgb(102, 9, 9);
+  transform: scale(1.05);
+}
+.modalBody {
+  padding: 15px;
 }
 
-.modalFooter{
-	background: rgb(158, 152, 76);
-	text-align: center;
-	padding: 15px;
+.modalFooter {
+  background: #606e85;
+  text-align: center;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+  color: white;
 }
 
-@media screen and (max-width:768px){
-   main{
-       flex-direction: column;
-       align-items: center;
-   }
-   #side1, #side2{
-       width: 80vw;
-       margin : 5px auto;
-   }
-    
-    
-}
-@keyframes body {
-    0%{background : linear-gradient(to left, #614385, #516395);}
-    10%{background : linear-gradient(45deg, #614385, #516395);}
-    20%{background : linear-gradient(90deg, #614385, #516395);}
-    30%{background : linear-gradient(135deg, #614385, #516395);}
-    50%{background : linear-gradient(180deg, #614385, #516395);}
-    70%{background : linear-gradient(225deg, #614385, #516395);}
-    80%{background : linear-gradient(270deg, #614385, #516395);}
-    90%{background : linear-gradient(315deg, #614385, #516395);}
-    100%{background : linear-gradient(360deg, #614385, #516395);}
-}
-@keyframes button {
-    0%{
-        border-top-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-right-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-bottom-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-left-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        
-    }
-     25%{
-        border-top-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-right-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-bottom-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-left-color:  var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        
-    }
-     50%{
-        border-top-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-right-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-bottom-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-left-color:  var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        
-    }
-     75%{
-        border-top-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-right-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-bottom-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-left-color:   var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        
-    }
-     100%{
-        border-top-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-right-color: var(--button-border-t1, rgba(222, 184, 135, 0.53));
-        border-bottom-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        border-left-color: var(--button-border-t2, rgba(0, 255, 255, 0.67));
-        
-    }
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  #side1,
+  #side2 {
+    width: 80vw;
+    margin: 5px auto;
+  }
 }
