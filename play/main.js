@@ -29,9 +29,9 @@ let generatedWinningNumber = generateWinningNumber();
 //Tasks to perform when user submits a guess
 const game = (e) => {
 	e.preventDefault();
-	const pass = validateInput();
-	if(!pass || userInput.value.startsWith("0")){ 
-		validation.innerText = "Rules : \n\n Don't repeat a number twice \n\n Number can't start with 0\n\n Number must consist four digits "
+	const { passes, message } = validateInput();
+	if(!passes){ 
+		validation.innerText = message;
 	}else{
 		validation.innerText = "";
 		let dead = 0;
@@ -69,17 +69,25 @@ const game = (e) => {
 form.addEventListener("submit", game);
 //Make sure user input passes all conditions
 const validateInput = () => {
-	let passes;
-	for (let i of userInput.value) {
-		if (((userInput.value.split(i).length) !== 2) ||  userInput.value.length != 4){
-			passes = false;
-			break;	
-		}
-		else{
-			passes = true;
+	let passes = true, message;
+	if(userInput.value.length !== 4) {
+		passes = false;
+		message = 'You must enter four digits.';
+	}
+	else if(userInput.value.startsWith("0")) {
+		passes = false;
+		message = 'Guess cannot start with 0.';
+	} else {
+		for (let i of userInput.value) {
+			if (((userInput.value.split(i).length) !== 2)){
+				passes = false;
+				message = 'A number cannot appear twice.'
+				break;	
+			}
 		}
 	}
-	return passes;
+	
+	return { passes, message };
 }
 playAgain.addEventListener("click", () => {
 	modal.style.display = "block";
