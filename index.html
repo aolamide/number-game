@@ -35,24 +35,45 @@
         the exact position). Using the information given back to you from the
         computer, you must logically guess (kill) the number in few moves as
         possible.
-        <span id="example">
-          Example:
+        <div id="example">
+          Example 1:
           <ul id="example-list">
-            <li>Secret number: 1234</li>
-            <li>Your guess: 4271</li>
+            <li>Secret number: <strong>7098</strong></li>
+            <li>Your guess: <strong>7985</strong></li>
             <li>
-              Answer: 1 (one) dead and 2 (two) wounded.
+              Response: <em>one(1) dead and two(2) wounded.</em>
               <em
-                >2 is on the exact position so it's dead (one dead), while both 4 and 1 are
+                >7 is on the exact position so it's dead (one dead), while both 9 and 8 are
                 in the secret number but are not in the right positions, thereby making them wounded (two wounded).</em
               >
             </li>
           </ul>
-          <span id="ps"
-            >P.S: you do not know which of them is dead, so you just keep
-            trying randomly but logically till you get it right.
-          </span>
-        </span>
+          Example 2:
+          <ul id="example-list">
+            <li>Secret number: <strong>7098</strong></li>
+            <li>Your guess: <strong>1234</strong></li>
+            <li>
+              Response: <em>zero(0) dead and zero(0) wounded.</em>
+              <em
+                >None of the numbers in your guess are part of the secret number, so none (0) dead and none (0) wounded.</em
+              >
+            </li>
+          </ul>
+          Example 3:
+          <ul id="example-list">
+            <li>Secret number: <strong>7098</strong></li>
+            <li>Your guess: <strong>7098</strong></li>
+            <li>
+              Response: <em>four(4) dead and zero(0) wounded.</em>
+              <em
+                >All numbers in the guess are in the secret number and in the right positions, so all (4) dead and none (0) wounded. You win at this point.</em
+              >
+            </li>
+          </ul>
+          <div id="ps"
+            >P.S: You have to figure out which numbers are dead and which are wounded by logically selecting your guesses.
+          </div>
+        </div>
         <div class="play">
           <a href="./play"><button>Play</button></a>
         </div>
